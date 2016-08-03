@@ -18,11 +18,7 @@ public class PigLatinTest {
 		assertEquals("", "child22ay ", pigSentence1.translate("22child")); //would be nice to incorporate numbers?
 		
 		assertEquals("", "arcay ", pigSentence1.translate("car"));
-		
-		
-//		String startsWithVowel = "Iron";
-//	    String startsWithOneConsonant = "Yard";
-//	    String startsWithTwoConsonants = "Blows";
+
 	    
 	    }
 	}
