@@ -10,7 +10,7 @@ public class BatteryTest {
 //	public void changeLeftOver(){
 //		assertEquals()
 //	}
-
+	@Test 
 	public void testDrainCharge(){
 		assertEquals("", 50f, new Battery(100f).drain(50f), .01);
 		assertEquals("", 60f, new Battery(100f).drain(40f), 01);

@@ -33,7 +33,7 @@ public class Battery {
 		return capacity;
 	}
 
-	public void updateLeftOver(float leftOver){
+	private void updateLeftOver(float leftOver){
 		this.leftOver = leftOver;
 	}
 
