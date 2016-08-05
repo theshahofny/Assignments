@@ -12,7 +12,6 @@ public class MaybePalindrome {
 
 	public boolean checkIfPalindrome(){
 		return isPalindrome = checkThisString.replaceAll("[^A-Za-z]", "").equalsIgnoreCase(new StringBuilder(checkThisString).reverse().toString().replaceAll("[^A-Za-z]", ""));
-
 	}
 
 
