@@ -1,4 +1,4 @@
-package com.tiy.ssa.weekone.assignmentFourt;
+package com.tiy.ssa.weekone.assignmentFive;
 
 public class Location {
 

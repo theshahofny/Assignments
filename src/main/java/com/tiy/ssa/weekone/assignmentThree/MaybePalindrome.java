@@ -2,7 +2,7 @@ package com.tiy.ssa.weekone.assignmentThree;
 
 public class MaybePalindrome {
 
-	private String checkThisString;
+	final String checkThisString;
 	private boolean isPalindrome;
 
 
