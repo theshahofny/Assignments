@@ -1,4 +1,4 @@
-package com.tiy.ssa.weekone.assignmentfourt;
+package com.tiy.ssa.weekone.assignmentFive;
 
 public class Math1 {
 
@@ -18,7 +18,7 @@ public class Math1 {
 	public static double cubedRoot(int rootVal){
 		System.out.println("Hi thurston, I know the looping, just could not do math, and when you showed us the code, i did not want to copy yours.");
 		double math3;
-		math3 =  Math.log(rootVal) / Math.log(3);
+		math3 = Math.log(rootVal) / Math.log(3);  
 		return math3;
 		
 		

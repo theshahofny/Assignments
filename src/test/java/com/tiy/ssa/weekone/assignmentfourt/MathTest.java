@@ -8,8 +8,8 @@ public class MathTest {
 
 	@Test
 	public void test() {
-		assertEquals(" ", 3 , Math1.squaredRoot(11), 01);
-		assertEquals(" ", 3 , Math1.cubedRoot(81), 01);
+		assertEquals(" ", 3 , Math.squaredRoot(11), 01);
+		assertEquals(" ", 3 , Math.cubedRoot(81), 01);
 	}
 
 }
