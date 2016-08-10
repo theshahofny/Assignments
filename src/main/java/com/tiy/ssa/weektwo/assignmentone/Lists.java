@@ -28,14 +28,6 @@ public class Lists {
 		List<String> sorted = new ArrayList<>(input);
 		sorted.sort(Comparator.comparing(String::length).reversed());
 
-		//		for(int i=0;i<input.size();i++){
-		//            for(int j=0;j<input.size()-i-1;j++){
-		//                if( (input.get(j)).length() > (input.get(j+1)).length() ){
-		//                    Collections.swap(input, j, j+1);
-		//                }
-		//            }
-		//        }
-
 		return sorted;
 
 	}
