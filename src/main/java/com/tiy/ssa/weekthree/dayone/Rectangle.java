@@ -1,4 +1,4 @@
-package com.tiy.ssa.weekthree;
+package com.tiy.ssa.weekthree.dayone;
 
 public class Rectangle implements Shape {
 
@@ -36,5 +36,9 @@ public class Rectangle implements Shape {
 	public float area() {
 		return getHeight() * getWidth();
 	}
-
+	
+	@Override
+	public void setDimension(int dimension){
+		
+	}
 }

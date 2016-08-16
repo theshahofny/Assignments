@@ -1,6 +1,5 @@
-package com.tiy.ssa.weekthree;
+package com.tiy.ssa.weekthree.dayone;
 
-import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -102,6 +101,7 @@ public abstract class SSAMap<K, V> implements Map<K,V> {
     for (Entry<K, V> e : entrySet())
         collect.add(e.getValue());
     return collect;
+    
 	}
 
 }
