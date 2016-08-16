@@ -1,8 +1,10 @@
 package com.tiy.ssa.weekthree;
 
 import java.util.AbstractCollection;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -23,8 +25,8 @@ public abstract class SSAMap<K, V> implements Map<K,V> {
 	@Override
 	public void clear()
 	{
-		for (Entry<K, V> entry : entrySet())
-			remove(entry);
+		for (K map : keySet())
+			remove(map);
 	}
 
 	@Override
@@ -36,7 +38,10 @@ public abstract class SSAMap<K, V> implements Map<K,V> {
 	@Override
 	public boolean containsValue(Object value)
 	{
-		return null != get(value);
+		for (Entry<K, V> map : entrySet())
+            if (map.getValue().equals(value))
+                return true;
+        return false;
 	}
 
 	@Override
@@ -59,8 +64,8 @@ public abstract class SSAMap<K, V> implements Map<K,V> {
 	public Set<K> keySet()
 	{
 		Set<K> keySet = new HashSet<>();
-		for (K map : keySet()){
-			keySet.add(map);
+		for (Entry <K,V> entry : entrySet()){
+			keySet.add(entry.getKey());
 		}
 
 		return keySet;
@@ -76,11 +81,11 @@ public abstract class SSAMap<K, V> implements Map<K,V> {
 	@Override
 	public V replace(K key, V value)
 	{
-		V value2 = remove(get(key));
-		if(value2 == value){
-			return value;
+		
+		if(get(key) != null){
+			return put(key, value);
 		}
-		else return put(key, value);
+		return null;
 
 	}
 
@@ -88,55 +93,15 @@ public abstract class SSAMap<K, V> implements Map<K,V> {
 	@Override
 	public int size()
 	{
-		int counter = 0;
-		for(K map : keySet()){
-			counter++;
-		}
-		return counter;  
+		return entrySet().size();
 	}
 
 	@Override
 	public Collection<V> values()
-	{
-//		if (values == null) {
-//			            values = new AbstractCollection<V>() {
-//			                public Iterator<V> More ...iterator() {
-//			                    return new Iterator<V>() {
-//			                        private Iterator<Entry<K,V>> i = entrySet().iterator();
-//			
-//			                        public boolean More ...hasNext() {
-//			                            return i.hasNext();
-//			                        }
-//			
-//			                        public V More ...next() {
-//			                            return i.next().getValue();
-//			                        }
-//			
-//			                        public void More ...remove() {
-//			                            i.remove();
-//			                        }
-//			                    };
-//			                }
-//			
-//			               public int More ...size() {
-//			                    return AbstractMap.this.size();
-//			                }
-//			
-//			                public boolean More ...isEmpty() {
-//			                    return AbstractMap.this.isEmpty();
-//			                }
-//			
-//			                public void More ...clear() {
-//			                    AbstractMap.this.clear();
-//			                }
-//			
-//			                public boolean More ...contains(Object v) {
-//			                    return AbstractMap.this.containsValue(v);
-//			                }
-//			            };
-//			        }
-		      return values();
-
+	{List<V> collect = new ArrayList<V>();
+    for (Entry<K, V> e : entrySet())
+        collect.add(e.getValue());
+    return collect;
 	}
 
 }
