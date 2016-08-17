@@ -12,7 +12,7 @@ public class Rook implements Piece {
 
 	@Override
 	public int compareTo(Piece arg0) {
-		if(this.equals(arg0)){
+		if(this.getClass().equals(arg0.getClass())){
 			int diff1 = (locateRook.x + 4) + (locateRook.y + 4) ;
 			int diff2 = (arg0.where().x + 4) + (arg0.where().y + 4) ;
 					if(diff1 > diff2)
@@ -25,14 +25,13 @@ public class Rook implements Piece {
 	}
 
 	@Override
-	public Location where(){
-		
+	public Location where(){		
 		return locateRook;
 	}
 
 	@Override
 	public boolean canMove(Location where) {
-		if( locateRook.x > Piece.top | locateRook.x < Piece.bottom | locateRook.y > Piece.top | locateRook.y < Piece.bottom){
+		if( locateRook.x > top | locateRook.x < bottom | locateRook.y > top | locateRook.y < bottom){
 			return false;
 		}
 		  if (where.x == this.locateRook.x | where.y == this.locateRook.y)

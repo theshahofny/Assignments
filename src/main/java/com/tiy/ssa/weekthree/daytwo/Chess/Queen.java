@@ -13,7 +13,7 @@ public class Queen implements Piece{
 
 	@Override
 	public int compareTo(Piece arg0) {
-		if(this.equals(arg0)){
+		if(this.getClass().equals(arg0.getClass())){
 			int diff1 = (locateQueen.x + 4) + (locateQueen.y + 4) ;
 			int diff2 = (arg0.where().x + 4) + (arg0.where().y + 4) ;
 			if(diff1 > diff2)
@@ -33,10 +33,12 @@ public class Queen implements Piece{
 
 	@Override
 	public boolean canMove(Location where) {
-		if(locateQueen.x > 7 | locateQueen.x < 0 | locateQueen.y > 7 | locateQueen.y < 0){
+		if(locateQueen.x > top | locateQueen.x < bottom | locateQueen.y > top | locateQueen.y < bottom){
 			return false;
 		}
-		return (locateQueen.x == where.x | locateQueen.y == where.y);
+		int diffRow = Math.abs(where.x - this.locateQueen.x);
+		int diffCol = Math.abs(where.y - this.locateQueen.y); 
+		return (locateQueen.x == where.x | locateQueen.y == where.y | (diffRow == diffCol));
 
 	}
 

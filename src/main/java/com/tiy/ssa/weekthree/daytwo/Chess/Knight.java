@@ -14,7 +14,7 @@ public class Knight implements Piece {
 	
 	@Override
 	public int compareTo(Piece arg0) {
-		if(this.equals(arg0)){
+		if((this.getClass().equals(arg0.getClass())) | (arg0.getClass() == Bishop.class)){
 			int diff1 = (locateKnight.x + 4) + (locateKnight.y + 4) ;
 			int diff2 = (arg0.where().x + 4) + (arg0.where().y + 4) ;
 					if(diff1 > diff2)
@@ -23,6 +23,7 @@ public class Knight implements Piece {
 					return -1;
 				return 0;
 			}
+		
 		return (this.getVal() > arg0.getVal())? 1 : -1;
 
 	}
@@ -34,7 +35,7 @@ public class Knight implements Piece {
 
 	@Override
 	public boolean canMove(Location where) {
-		if( locateKnight.x > Piece.top | locateKnight.x < Piece.bottom | locateKnight.y > Piece.top | locateKnight.y < Piece.bottom){
+		if( locateKnight.x > top | locateKnight.x < bottom | locateKnight.y > top | locateKnight.y < bottom){
 			return false;
 		}
 		int diffRow = Math.abs(where.x - this.locateKnight.x);

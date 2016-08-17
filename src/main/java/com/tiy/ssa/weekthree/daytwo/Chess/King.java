@@ -15,7 +15,7 @@ public class King implements Piece{
 	@Override
 	public int compareTo(Piece arg0) {
 
-		if(this.equals(arg0)){
+		if(this.getClass().equals(arg0.getClass())){
 			int diff1 = (locateKing.x + 4) + (locateKing.y + 4) ;
 			int diff2 = (arg0.where().x + 4) + (arg0.where().y + 4) ;
 					if(diff1 > diff2)
@@ -35,14 +35,16 @@ public class King implements Piece{
 
 	@Override
 	public boolean canMove(Location where) {
-		if( locateKing.x > King.top | locateKing.x < King.bottom | locateKing.y > King.top | locateKing.y < King.bottom){
+		if( locateKing.x > top | locateKing.x < bottom | locateKing.y > top | locateKing.y < bottom){
 			return false;
 		}
 		int diffRow = Math.abs(where.x - this.locateKing.x);
 		int diffCol = Math.abs(where.y - this.locateKing.y);
 
-		if ((diffRow == 1 && diffCol == 0) || (diffRow == 0 && diffCol == 1) || (diffRow == 1 && diffCol == 1))  {
+		if ((diffRow == 1 && diffCol == 0) | (diffRow == 0 && diffCol == 1) | (diffRow == 1 && diffCol == 1))  {
+			//can use Location.offSet(row, column) method if true to actually move the pieces;
 			return true;
+		
 		}
 
 		return false;

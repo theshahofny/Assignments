@@ -13,7 +13,7 @@ public class Bishop implements Piece {
 
 	@Override
 	public int compareTo(Piece arg0) {
-		if(this.equals(arg0)){
+		if(this.getClass().equals(arg0.getClass()) | (arg0.getClass() == Knight.class)){
 			int diff1 = (locateBishop.x + 4) + (locateBishop.y + 4) ;
 			int diff2 = (arg0.where().x + 4) + (arg0.where().y + 4) ;
 					if(diff1 > diff2)

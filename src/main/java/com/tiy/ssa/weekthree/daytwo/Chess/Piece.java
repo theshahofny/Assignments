@@ -6,9 +6,13 @@ public interface Piece extends Comparable <Piece> {
 	
 	final int top = 7;
 	final int bottom  = 0;
+
+
 	Location where();
 	
 	boolean canMove(Location where);
+	
+	
 	
 	@Override 
 	String toString();
@@ -27,15 +31,8 @@ public interface Piece extends Comparable <Piece> {
      * be valued by their location relative to the 'center'
      * of the board (3, 3) . . . (4, 4)
      */
-    public int compareTo(Piece o);
-
-    /**
-     * take into account intrinsic value and location
-     * @param other
-     * @return
-     * 
-     */
-    
+    public int compareTo(Piece arg0);
+    	
     public int getVal();
     
     @Override
@@ -44,6 +41,5 @@ public interface Piece extends Comparable <Piece> {
     @Override
     public int hashCode();
     
-
 
 }

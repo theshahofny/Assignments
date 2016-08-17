@@ -12,7 +12,7 @@ public class Pawn implements Piece {
 
 	@Override
 	public int compareTo(Piece arg0) {
-		if(this.equals(arg0)){
+		if(this.getClass().equals(arg0.getClass())){
 			int diff1 = (locatePawn.x + 4) + (locatePawn.y + 4) ;
 			int diff2 = (arg0.where().x + 4) + (arg0.where().y + 4) ;
 					if(diff1 > diff2)
@@ -31,7 +31,7 @@ public class Pawn implements Piece {
 
 	@Override
 	public boolean canMove(Location where) {
-		if( locatePawn.x > Piece.top | locatePawn.x < Piece.bottom | locatePawn.y > Piece.top | locatePawn.y < Piece.bottom){
+		if( locatePawn.x > top | locatePawn.x < bottom | locatePawn.y > top | locatePawn.y < bottom){
 			return false;
 		}
 	    int diffRow = Math.abs(where.x - this.locatePawn.x);
