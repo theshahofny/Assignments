@@ -35,6 +35,8 @@ public class King implements Piece{
 
 	@Override
 	public boolean canMove(Location where) {
+		if(where.equals(where()))
+			return false;
 		if( locateKing.x > top | locateKing.x < bottom | locateKing.y > top | locateKing.y < bottom){
 			return false;
 		}
@@ -44,7 +46,6 @@ public class King implements Piece{
 		if ((diffRow == 1 && diffCol == 0) | (diffRow == 0 && diffCol == 1) | (diffRow == 1 && diffCol == 1))  {
 			//can use Location.offSet(row, column) method if true to actually move the pieces;
 			return true;
-		
 		}
 
 		return false;

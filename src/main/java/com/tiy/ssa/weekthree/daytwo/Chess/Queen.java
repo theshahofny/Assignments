@@ -33,6 +33,10 @@ public class Queen implements Piece{
 
 	@Override
 	public boolean canMove(Location where) {
+		if(where.equals(where()))
+			return false;
+		if(where.equals(where()))
+			return false;
 		if(locateQueen.x > top | locateQueen.x < bottom | locateQueen.y > top | locateQueen.y < bottom){
 			return false;
 		}

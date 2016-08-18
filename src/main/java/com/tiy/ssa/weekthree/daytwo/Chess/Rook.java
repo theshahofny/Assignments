@@ -31,6 +31,8 @@ public class Rook implements Piece {
 
 	@Override
 	public boolean canMove(Location where) {
+		if(where.equals(where()))
+			return false;
 		if( locateRook.x > top | locateRook.x < bottom | locateRook.y > top | locateRook.y < bottom){
 			return false;
 		}

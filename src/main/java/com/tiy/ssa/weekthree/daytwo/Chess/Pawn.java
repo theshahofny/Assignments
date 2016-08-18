@@ -31,6 +31,8 @@ public class Pawn implements Piece {
 
 	@Override
 	public boolean canMove(Location where) {
+		if(where.equals(where()))
+			return false;
 		if( locatePawn.x > top | locatePawn.x < bottom | locatePawn.y > top | locatePawn.y < bottom){
 			return false;
 		}

@@ -35,6 +35,8 @@ public class Knight implements Piece {
 
 	@Override
 	public boolean canMove(Location where) {
+		if(where.equals(where()))
+			return false;
 		if( locateKnight.x > top | locateKnight.x < bottom | locateKnight.y > top | locateKnight.y < bottom){
 			return false;
 		}

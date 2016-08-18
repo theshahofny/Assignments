@@ -106,8 +106,14 @@ public class ChessTest {
 		assertEquals("", -1, pawn.compareTo(queen));
 		assertEquals("", 0, pawn.compareTo(new Pawn(new Location(0,1))));
 		
+		assertFalse(bishop.canMove(bishop.where()));
+		assertFalse(bishop.canMove(bishop.where()));
+		assertFalse(bishop.canMove(bishop.where()));
+		assertFalse(bishop.canMove(bishop.where()));
+		assertFalse(bishop.canMove(bishop.where()));
+		assertFalse(bishop.canMove(bishop.where()));
 		
-	}
+		}
 }
 
 

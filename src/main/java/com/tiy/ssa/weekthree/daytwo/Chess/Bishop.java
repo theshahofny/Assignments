@@ -32,9 +32,12 @@ public class Bishop implements Piece {
 
 	@Override
 	public boolean canMove(Location where) {
+		if(where.equals(where()))
+				return false;
 		if( locateBishop.x > Piece.top | locateBishop.x < Piece.bottom | locateBishop.y > Piece.top | locateBishop.y < Piece.bottom){
 			return false;
 		}
+		
 		int diffRow = Math.abs(where.x - this.locateBishop.x);
 		int diffCol = Math.abs(where.y - this.locateBishop.y);
 
