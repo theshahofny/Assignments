@@ -12,10 +12,7 @@ public class Trie
       root = new TrieNode();
    }
    
-   /**
-    * Adds a word to the Trie
-    * @param word
-    */
+
    public void addWord(String word)
    {
       root.addWord(word.toLowerCase());
@@ -62,10 +59,10 @@ public class Trie
 	 
 	    if(digits == null || digits.length() == 0)
 	        return result;
-	 
+	
 	    ArrayList<Character> temp = new ArrayList<Character>();
 	    getString(digits, temp, result, map);
-	 
+	
 	    return result;
 	}
 	 

@@ -84,10 +84,9 @@ public class TrieNode
 			list.add(toString());
 		}
 
-		//If any children
 		if (!isLeaf)
 		{
-			//Add any words belonging to any children
+			
 			for (int i=0; i<children.length; i++)
 			{
 				if (children[i] != null)
@@ -104,42 +103,18 @@ public class TrieNode
 
 	}
 
-
-
-	/**
-
-	 * Gets the String that this node represents.
-
-	 * For example, if this node represents the character t, whose parent
-
-	 * represents the charater a, whose parent represents the character
-
-	 * c, then the String would be "cat".
-
-	 * @return
-
-	 */
-
 	public String toString()
 
 	{
 
-		if (parent == null)
-
-		{
-
+		if (parent == null){
 			return "";
-
 		}
 
-		else
-
-		{
-
+		else{
 			return parent.toString() + new String(new char[] {character});
-
 		}
 
-} 
+	} 
 
 }
