@@ -34,4 +34,6 @@ public class Thermometer {
 	public int celciusToFahrenheit(int temperature){
 		return (int) Math.round(temperature * 1.8 + 32);
 	}
+	
+	static final Logger LOGGER = 
 }
