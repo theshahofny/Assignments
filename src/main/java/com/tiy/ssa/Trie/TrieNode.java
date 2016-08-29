@@ -7,13 +7,10 @@ public class TrieNode
 {
 	private TrieNode parent;
 	private TrieNode[] children;
-	private boolean isLeaf;     //Quick way to check if any children exist
-	private boolean isWord;     //Does this node represent the last character of a word
-	private char character;     //The character this node represents
+	private boolean isLeaf;    
+	private boolean isWord;     
+	private char character;     
 
-	/**
-	 * Constructor for top level root node.
-	 */
 	public TrieNode()
 	{
 		children = new TrieNode[26];
@@ -21,21 +18,13 @@ public class TrieNode
 		isWord = false;
 	}
 
-	/**
-	 * Constructor for child node.
-	 */
 	public TrieNode(char character)
 	{
 		this();
 		this.character = character;
 	}
 
-	/**
-	 * Adds a word to this node. This method is called recursively and
-	 * adds child nodes for each successive letter in the word, therefore
-	 * recursive calls will be made with partial words.
-	 * @param word the word to add
-	 */
+
 	protected void addWord(String word)
 	{
 		isLeaf = false;
@@ -57,28 +46,18 @@ public class TrieNode
 		}
 	}
 
-	/**
-	 * Returns the child TrieNode representing the given char,
-	 * or null if no node exists.
-	 * @param c
-	 * @return
-	 */
+	
 	protected TrieNode getNode(char c)
 	{
 		return children[c - 'a'];
 	}
 
-	/**
-	 * Returns a List of String objects which are lower in the
-	 * hierarchy that this node.
-	 * @return
-	 */
+	
 	protected List<String> getWords()
 	{
-		//Create a list to return
+		
 		List<String> list = new ArrayList<>();
 
-		//If this node represents a word, add it
 		if (isWord)
 		{
 			list.add(toString());
